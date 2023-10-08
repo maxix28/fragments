@@ -16,7 +16,7 @@ lateinit var  binding: FragmentFirstBinding
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+val interace:MyInterace = activity as MyInterace
 
         val view = inflater.inflate(R.layout.fragment_first, container, false)
 
@@ -32,6 +32,7 @@ lateinit var  binding: FragmentFirstBinding
             binding.button.setOnClickListener {
                 binding.textView2.text = "WORKS"
 
+                interace.sendtext(binding.input3.text.toString())
 
         }
         return  view
